@@ -42,3 +42,15 @@ echo "Snack 1 svolto con array associativo <br><br>";
 for($l = 0; $l < count($matchesAssoc); $l++) {
   echo $matchesAssoc[$l]["squadraCasa"] . " - " . $matchesAssoc[$l]["squadraOspite"] . " | " . strval($matchesAssoc[$l]["puntiSquadraCasa"]) . " - " . strval($matchesAssoc[$l]["puntiSquadraOspite"]) . "<br>";
 };
+
+echo "<br><hr><br>";
+
+// Snack 2
+// query utilizzata: ?name=Tizio&mail=fake@email.com&age=9999
+$userData = $_GET;
+
+if(strlen($userData["name"]) > 3 && strpos($userData["mail"], "@") !== false && strpos($userData["mail"], ".") !== false && is_numeric($userData["age"])) {
+    echo "Accesso riuscito";
+} else {
+    echo "Accesso negato";
+};
